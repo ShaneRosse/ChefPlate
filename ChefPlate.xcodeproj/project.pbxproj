@@ -13,8 +13,9 @@
 		977B463E1CB981E7006BA45E /* ChefPlate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 977B463C1CB981E7006BA45E /* ChefPlate.xcdatamodeld */; };
 		977B46401CB981E7006BA45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977B463F1CB981E7006BA45E /* Assets.xcassets */; };
 		977B46431CB981E7006BA45E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977B46411CB981E7006BA45E /* LaunchScreen.storyboard */; };
-		977B464B1CB982D7006BA45E /* Plates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977B464A1CB982D7006BA45E /* Plates.swift */; };
 		977B464D1CB9871A006BA45E /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977B464C1CB9871A006BA45E /* TableVC.swift */; };
+		978C33F81CDAA985009619BB /* FeedbackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C33F71CDAA985009619BB /* FeedbackTableVC.swift */; };
+		978C33FA1CDAB6EC009619BB /* StarTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C33F91CDAB6EC009619BB /* StarTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,9 @@
 		977B463F1CB981E7006BA45E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		977B46421CB981E7006BA45E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		977B46441CB981E7006BA45E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		977B464A1CB982D7006BA45E /* Plates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plates.swift; sourceTree = "<group>"; };
 		977B464C1CB9871A006BA45E /* TableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
+		978C33F71CDAA985009619BB /* FeedbackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedbackTableVC.swift; path = ../FeedbackTableVC.swift; sourceTree = "<group>"; };
+		978C33F91CDAB6EC009619BB /* StarTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarTableVC.swift; sourceTree = "<group>"; };
 		CB6E0E4D7B6A7C50AA245CF1 /* Pods-ChefPlate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefPlate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChefPlate/Pods-ChefPlate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +77,8 @@
 			children = (
 				977B46351CB981E7006BA45E /* AppDelegate.swift */,
 				977B464C1CB9871A006BA45E /* TableVC.swift */,
-				977B464A1CB982D7006BA45E /* Plates.swift */,
+				978C33F71CDAA985009619BB /* FeedbackTableVC.swift */,
+				978C33F91CDAB6EC009619BB /* StarTableVC.swift */,
 				977B46391CB981E7006BA45E /* Main.storyboard */,
 				977B463F1CB981E7006BA45E /* Assets.xcassets */,
 				977B46411CB981E7006BA45E /* LaunchScreen.storyboard */,
@@ -216,9 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				977B464B1CB982D7006BA45E /* Plates.swift in Sources */,
+				978C33FA1CDAB6EC009619BB /* StarTableVC.swift in Sources */,
 				977B46361CB981E7006BA45E /* AppDelegate.swift in Sources */,
 				977B464D1CB9871A006BA45E /* TableVC.swift in Sources */,
+				978C33F81CDAA985009619BB /* FeedbackTableVC.swift in Sources */,
 				977B463E1CB981E7006BA45E /* ChefPlate.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,30 +7,27 @@
 //
 
 import UIKit
+import Firebase
 
 class TableVC: UITableViewController {
     
-    
-    let plates: Plates = Plates()
     var names: [String] = []
     var refreshCon: UIRefreshControl!
     
+    let db_url: String = "https://blazing-heat-9345.firebaseio.com/prod/users"
+    
+    var snap: String?
+    var people: Dictionary<String, AnyObject>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        plates.startUp()
+        self.startUp()
         self.refreshCon = UIRefreshControl()
         self.refreshCon.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshCon.addTarget(self, action: #selector(refreshTouch), forControlEvents: .ValueChanged)
         self.tableView.addSubview(self.refreshCon)
     }
     
-    //    override func viewWillAppear(animated: Bool) {
-    //        refreshTable()
-    //    }
-    //
-    //    override func viewDidAppear(animated: Bool) {
-    //        refreshTable()
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,7 +35,7 @@ class TableVC: UITableViewController {
     }
     
     func refreshTable() {
-        names = plates.getNames()
+        names = self.getNames()
         self.tableView.reloadData()
     }
     
@@ -47,7 +44,23 @@ class TableVC: UITableViewController {
         self.refreshCon.endRefreshing()
     }
     @IBAction func clearTouch(sender: AnyObject) {
-        plates.cleanUp()
+        let confirm: UIAlertController = UIAlertController(title: "Pi Kappa Phi", message: "Are you sure you wish to erase?", preferredStyle: .ActionSheet)
+        let positive: UIAlertAction = UIAlertAction(title: "YES", style: .Default, handler: { (UIAlertAction) in
+            self.cleanUp()
+            self.thankYou()
+        })
+        let negative: UIAlertAction = UIAlertAction(title: "NO", style: .Default) { (UIAlertAction) in
+            //
+        }
+        confirm.addAction(positive)
+        confirm.addAction(negative)
+        self.presentViewController(confirm, animated: true) {
+            
+        }
+
+    }
+    
+    func thankYou() {
         let alert: UIAlertController = UIAlertController(title: "Pi Kappa Phi", message: "Thank you!", preferredStyle: .Alert)
         let action: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: { (UIAlertAction) in
             self.refreshTable()
@@ -56,6 +69,49 @@ class TableVC: UITableViewController {
         self.presentViewController(alert, animated: true) {
         }
     }
+    
+    func startUp() {
+        let ref = Firebase(url: db_url)
+        
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            if (snapshot.value == nil) {
+                print("No value from Firebase")
+            } else {
+                self.people = snapshot.value as? Dictionary
+                self.refreshTable()
+            }
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
+    }
+    
+    
+    func count() -> Int {
+        if let data = people {
+            return data.count
+        } else {
+            return 0
+        }
+    }
+    
+    func getNames() -> [String] {
+        var result: [String] = []
+        if let people = people {
+            for (key, object) in people {
+                print("Garbage timestamp: \(key)")
+                if (!result.contains(object as! String)) {
+                    result.append(object as! String)
+                }
+            }
+        }
+        return result
+    }
+    
+    func cleanUp() {
+        let ref = Firebase(url: db_url)
+        ref.removeValue()
+    }
+
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -83,7 +139,7 @@ class TableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 45
     }
     
     //    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -105,17 +161,16 @@ class TableVC: UITableViewController {
      }
      */
     
-    /*
      // Override to support editing the table view.
      override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
      if editingStyle == .Delete {
      // Delete the row from the data source
+        names.removeAtIndex(indexPath.row)
      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
      } else if editingStyle == .Insert {
      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
      }
      }
-     */
     
     /*
      // Override to support rearranging the table view.
