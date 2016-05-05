@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		248B985286B38EC582D3F1D5 /* Pods_ChefPlate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64710DB4D7A7666199E7A46A /* Pods_ChefPlate.framework */; };
+		9776528F1CDBD10100CB3D11 /* FoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776528E1CDBD10100CB3D11 /* FoodVC.swift */; };
 		977B46361CB981E7006BA45E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977B46351CB981E7006BA45E /* AppDelegate.swift */; };
 		977B463B1CB981E7006BA45E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977B46391CB981E7006BA45E /* Main.storyboard */; };
 		977B463E1CB981E7006BA45E /* ChefPlate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 977B463C1CB981E7006BA45E /* ChefPlate.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		64710DB4D7A7666199E7A46A /* Pods_ChefPlate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChefPlate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EBACE35408E47DCA085110 /* Pods-ChefPlate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChefPlate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChefPlate/Pods-ChefPlate.debug.xcconfig"; sourceTree = "<group>"; };
+		9776528E1CDBD10100CB3D11 /* FoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodVC.swift; sourceTree = "<group>"; };
 		977B46321CB981E7006BA45E /* ChefPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		977B46351CB981E7006BA45E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		977B463A1CB981E7006BA45E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				977B464C1CB9871A006BA45E /* TableVC.swift */,
 				978C33F71CDAA985009619BB /* FeedbackTableVC.swift */,
 				978C33F91CDAB6EC009619BB /* StarTableVC.swift */,
+				9776528E1CDBD10100CB3D11 /* FoodVC.swift */,
 				977B46391CB981E7006BA45E /* Main.storyboard */,
 				977B463F1CB981E7006BA45E /* Assets.xcassets */,
 				977B46411CB981E7006BA45E /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 			files = (
 				978C33FA1CDAB6EC009619BB /* StarTableVC.swift in Sources */,
 				977B46361CB981E7006BA45E /* AppDelegate.swift in Sources */,
+				9776528F1CDBD10100CB3D11 /* FoodVC.swift in Sources */,
 				977B464D1CB9871A006BA45E /* TableVC.swift in Sources */,
 				978C33F81CDAA985009619BB /* FeedbackTableVC.swift in Sources */,
 				977B463E1CB981E7006BA45E /* ChefPlate.xcdatamodeld in Sources */,
